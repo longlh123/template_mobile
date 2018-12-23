@@ -1,0 +1,91 @@
+*, *::before, *::after{
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+html{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body{margin: 0; padding: 0;}
+
+html, body{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 15px;
+	line-height: 1.5;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: 400;
+	margin: 10px 0;
+}
+
+h1{font-size: 36px;} 
+h2{font-size: 30px;}
+h3{font-size: 24px;}
+h4{font-size: 20px;}
+h5{font-size: 18px;}
+h6{font-size: 16px;}
+
+.container{
+	width: 100%;
+}
+
+.header-wrapper{
+	width: 100%;
+	height: 60px;
+	background-color: #047AA8;
+	padding: 20px 20px;
+	color: #ffffff;
+	zoom: 1;
+	filter: progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=2, Direction=180);	
+}
+
+.content-wrapper{
+	width: 100%;
+	height: 100%;
+}
+
+.content-wrapper .content{
+	width: 100%;
+	height: 82%;
+	overflow: auto;
+	word-wrap: break-word;
+	text-align: justify;
+}
+
+.content-wrapper .footer{
+	position: absolute; /*IE6 and above*/
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 60px;
+	text-align: center;
+	border-top: 1px solid #999999;
+	zoom: 1;
+	filter: progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=2, Direction=0)	
+}
+
+.btn{
+	display: inline-block;
+	border-radius: 2px;
+	background-color: #047AA8;
+	color: #ffffff;
+	font-weight: 500;
+	font-size: 18px;
+	border: none;
+	padding: 10px;
+	zoom: 1;
+	filter: progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=5, Direction=0),
+           progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=5, Direction=90),
+           progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=5, Direction=180),
+           progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=5, Direction=270);
+}
+
+[class *= "col-"]{
+	float: left; 
+}
