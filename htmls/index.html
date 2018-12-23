@@ -30,6 +30,9 @@
 		<mrRef RefType='script' RefPosition='head' type='text/javascript' src='../jquery/jquery-3.3.1.js'></mrRef>
 		<mrRef RefType='script' RefPosition='head' type='text/javascript' src='../jquery/jquery-3.3.1.min.js'>
 		-->
+
+		<script type="text/javascript" src='../jquery_custom/jquery.js'></script>
+
 	<!-- InstanceBeginEditable name="doctitle" -->
 		<title>
 		<!-- <mrPageTitle/> -->
@@ -46,19 +49,63 @@
 			</div>
 			<div class='content-wrapper'><!-- InstanceBeginEditable name="content_wrapper" -->
 			  <div class='content'>
+              	
+			  	<!--CONTACT PAGE-->
               	<h4 align="center">THÔNG TIN ĐÁP VIÊN</h4>
-                <label for="txt">Họ và tên:</label>
-                <input type="text" id="txt" placeholder=" " required> 
+                
+                <div class='txt_group'>
+                	<input type='text' id='txt' placeholder="" required>
+                	<span class='highlight'></span>
+                	<label for='txt' class='txt_label'>HỌ VÀ TÊN</label>
+                </div>
+                
+                <div class='txt_group'>
+                	<input type='text' id='txt' placeholder="" required>
+                	<span class='highlight'></span>
+                	<label for='txt' class='txt_label'>SỐ DI ĐỘNG</label>
+                	<div class='rad'>
+                		<input type="radio" id='rad' name="ref" value="ref">
+                		<label for='rad'>Từ chối trả lời</label>
+                	</div>	
+                </div>
+                
+
+
+
+                <label for="txt">Textbox 1:</label>
+                <input type="text" id="txt" placeholder="" required> 
+                
+                <div class='txt_group'>
+                	<input type='text' id='txt' placeholder="" required>
+                	<span class='highlight'></span>
+                	<label>Textbox 2</label>
+                </div>
+
+                <div class='txt_group'>
+                	<input type='text' id='txt' placeholder="" required>
+                	<span class='highlight'></span>
+                	<label>Textbox 3</label>
+                </div>
+
                 <label for="rtxt">Địa chỉ:</label>
                 <textarea name='address' rows="5" cols="2"></textarea>
                 <label for="gender">
                 	<input type="checkbox" name="gender" value="male">
                     <span class="label-text">Nam</span>
                 </label>
+                
+
+
+
+
+                <!--	
+	
                 <label for="gender">
                 	<input type="checkbox" name="gender" value="female">
                     <span class="label-text">Nữ</span>
                 </label>
+
+            	-->
 			  </div>
 			<!-- InstanceEndEditable -->
 			  <div class='footer'>
