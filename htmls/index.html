@@ -55,36 +55,38 @@
 			  	<!--CONTACT PAGE-->
               	<h4 align="center">THÔNG TIN ĐÁP VIÊN</h4>
                 
-                <div class='txt_group'>
+                <div class='grp_text'>
                 	<input type='text' id='txt_1' class='txt' placeholder="" required>
                 	<span class='highlight'></span>
-                	<label for='txt_1' class='txt_label'>HỌ VÀ TÊN</label>
+                	<label for='txt_1' class='txt_title'>HỌ VÀ TÊN</label>
                 </div>
                 
-                <div class='txt_group' id='b'>
-                	<div>GIỚI TÍNH</div>
+                <div class='grp_categories' id='b'>
+                	<div class='txt_content'>GIỚI TÍNH</div>
                 	<div class='chk'>
                 		<input type="radio" id='rad_male' class='rad' name="ref" value="Nam">
                 		<label for='rad_male'>Nam</label>
-                		<input type="radio" id='rad_female' class='rad' name="ref" value="Nữ">
-                		<label for='rad_female'>Nữ</label>
                 	</div>	
+                	<div class='chk'>
+                		<input type="radio" id='rad_female' class='rad' name="ref" value="Nữ" disabled="disabled">
+                		<label for='rad_female'>Nữ</label>
+                	</div>
                 </div>
 
-                <div class='txt_group' id='phone'>
+                <div class='grp_text' id='phone'>
                 	<input type='text' id='txt_phone_refuse' class='txt_refuse' placeholder="" required>
                 	<span class='highlight'></span>
-                	<label for='txt_refuse' class='txt_label'>ĐIỆN THOẠI CỐ ĐỊNH</label>
+                	<label for='txt_refuse' class='txt_title'>ĐIỆN THOẠI CỐ ĐỊNH</label>
                 	<div class='chk'>
                 		<input type="checkbox" id='chk_refuse_1' class='chk_refuse' name="ref" value="ref">
                 		<label for='chk_refuse_1'>Từ chối trả lời</label>
                 	</div>	
                 </div>
 
-				<div class='txt_group' id='mobiphone'>
+				<div class='grp_text' id='mobiphone'>
                 	<input type='text' id='txt_phone_refuse' class='txt_refuse' placeholder="" required>
                 	<span class='highlight'></span>
-                	<label for='txt_refuse' class='txt_label'>ĐIỆN THOẠI DI ĐỘNG</label>
+                	<label for='txt_refuse' class='txt_title'>ĐIỆN THOẠI DI ĐỘNG</label>
                 	<div class='chk'>
                 		<input type="checkbox" id='chk_refuse_2' class='chk_refuse' name="ref" value="ref">
                 		<label for='chk_refuse_2'>Từ chối trả lời</label>
@@ -93,19 +95,59 @@
 
                 <h4 align="center">THÔNG TIN ĐỊA CHỈ</h4>
 
-                <div class='txt_group'>
+                <div class='grp_text'>
                 	<input type='text' id='txt_2' class='txt' placeholder="" required>
                 	<span class='highlight'></span>
-                	<label for='txt_2' class='txt_label'>SỐ NHÀ</label>
+                	<label for='txt_2' class='txt_title'>SỐ NHÀ</label>
                 </div>
 
-                <div class='txt_group'>
+                <div class='grp_text'>
                 	<input type='text' id='txt_3' class='txt' placeholder="" required>
                 	<span class='highlight'></span>
-                	<label for='txt_3' class='txt_label'>ĐƯỜNG</label>
+                	<label for='txt_3' class='txt_title'>ĐƯỜNG</label>
                 </div>
 
+                <div class='grp_select'> 
+                	<div class='txt_content'>TINH</div>
+                	<div class='sel'>
+	                	<select id='sel_provinces'>
+	                		<option value="0">Chon Tinh/ Thanh Pho</option>
+	                		<option value="1">Ho Chi Minh</option>
+	                		<option value="2">Ha Noi</option>
+	                		<option value="3">Can Tho</option>
+	                		<option value="4">Da Nang</option>
+	                	</select>
+	                	<div class="sel_arrow"></div>
+                	</div>
+                </div>
 
+                <div class='grp_select'>
+                	<div class='txt_content'>QUAN/ HUYEN</div>
+                	<div class='sel'>
+	                	<select  id='sel_districts' disabled="disabled">
+	                		<option value="0">Chon Quan/ Huyen</option>
+	                		<option value="1">Ho Chi Minh</option>
+	                		<option value="2">Ha Noi</option>
+	                		<option value="3">Can Tho</option>
+	                		<option value="4">Da Nang</option>
+	                	</select>
+	                	<div class="sel_arrow"></div>
+                	</div>
+                </div>
+
+                <div class='grp_select'>
+                	<div class='txt_content'>PHUONG/ XA</div>
+                	<div class='sel'>
+	                	<select  id='sel_wards' disabled="disabled">
+	                		<option value="0">Chon Phuong/ Xa</option>
+	                		<option value="1">Ho Chi Minh</option>
+	                		<option value="2">Ha Noi</option>
+	                		<option value="3">Can Tho</option>
+	                		<option value="4">Da Nang</option>
+	                	</select>
+	                	<div class="sel_arrow"></div>
+                	</div>
+                </div>
                 <!--
 
 				<div class='txt_group'>
