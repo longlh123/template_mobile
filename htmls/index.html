@@ -33,6 +33,8 @@
 
 		<script type="text/javascript" src='../jquery_custom/jquery.js'></script>
 
+		<script type="text/javascript" src='../javascript/validation_script.js'></script>
+
 	<!-- InstanceBeginEditable name="doctitle" -->
 		<title>
 		<!-- <mrPageTitle/> -->
@@ -45,7 +47,7 @@
 	<body style="overflow:hidden">
 		<div class='container'>
 		  	<div class='header-wrapper'>
-				IPSOS
+				LONGLH123
 			</div>
 			<div class='content-wrapper'><!-- InstanceBeginEditable name="content_wrapper" -->
 			  <div class='content'>
@@ -59,15 +61,52 @@
                 	<label for='txt_1' class='txt_label'>HỌ VÀ TÊN</label>
                 </div>
                 
-                <div class='txt_group'>
-                	<input type='text' id='txt_refuse_1' class='txt_refuse' placeholder="" required>
+                <div class='txt_group' id='b'>
+                	<div>GIỚI TÍNH</div>
+                	<div class='chk'>
+                		<input type="radio" id='rad_male' class='rad' name="ref" value="Nam">
+                		<label for='rad_male'>Nam</label>
+                		<input type="radio" id='rad_female' class='rad' name="ref" value="Nữ">
+                		<label for='rad_female'>Nữ</label>
+                	</div>	
+                </div>
+
+                <div class='txt_group' id='phone'>
+                	<input type='text' id='txt_phone_refuse' class='txt_refuse' placeholder="" required>
                 	<span class='highlight'></span>
-                	<label for='txt_refuse' class='txt_label'>SỐ DI ĐỘNG</label>
+                	<label for='txt_refuse' class='txt_label'>ĐIỆN THOẠI CỐ ĐỊNH</label>
                 	<div class='chk'>
                 		<input type="checkbox" id='chk_refuse_1' class='chk_refuse' name="ref" value="ref">
                 		<label for='chk_refuse_1'>Từ chối trả lời</label>
                 	</div>	
                 </div>
+
+				<div class='txt_group' id='mobiphone'>
+                	<input type='text' id='txt_phone_refuse' class='txt_refuse' placeholder="" required>
+                	<span class='highlight'></span>
+                	<label for='txt_refuse' class='txt_label'>ĐIỆN THOẠI DI ĐỘNG</label>
+                	<div class='chk'>
+                		<input type="checkbox" id='chk_refuse_2' class='chk_refuse' name="ref" value="ref">
+                		<label for='chk_refuse_2'>Từ chối trả lời</label>
+                	</div>	
+                </div>                
+
+                <h4 align="center">THÔNG TIN ĐỊA CHỈ</h4>
+
+                <div class='txt_group'>
+                	<input type='text' id='txt_2' class='txt' placeholder="" required>
+                	<span class='highlight'></span>
+                	<label for='txt_2' class='txt_label'>SỐ NHÀ</label>
+                </div>
+
+                <div class='txt_group'>
+                	<input type='text' id='txt_3' class='txt' placeholder="" required>
+                	<span class='highlight'></span>
+                	<label for='txt_3' class='txt_label'>ĐƯỜNG</label>
+                </div>
+
+
+                <!--
 
 				<div class='txt_group'>
                 	<input type='text' id='txt_refuse_2' class='txt_refuse' placeholder="" required>
@@ -93,7 +132,7 @@
                 	<label for='txt_3' class='txt_label'>ĐƯỜNG</label>
                 </div>
 
-
+				-->
 			</div>
 			<!-- InstanceEndEditable -->
 			  <div class='footer'>
