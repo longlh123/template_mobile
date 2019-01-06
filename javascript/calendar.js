@@ -33,9 +33,9 @@ var Calendar = function(divId){
 	//Set mặc định tháng, năm hiện hành
 	var d = new Date();
 
-	this.currMonth = d.getMonth();
+	this.currMonth = d.getMonth(); //0-11
 	this.currYear = d.getFullYear();
-	this.currDay = d.getDay();
+	this.currDate = d.getDate(); //1-31
 }
 
 //Goes to next Month
@@ -78,14 +78,14 @@ Calendar.prototype.showcurr = function(){
 Calendar.prototype.showMonth = function(y, m){
 
 	var d = new Date();
-	var firstDayOfMonth = new Date(y, m, 1).getDay();
-	var lastDayOfMonth = new Date(y, m + 1, 0).getDay();
-	var lastDayOfLastMonth = m === 0 ? new Date(y - 1, 11, 0).getDay() : new Date(y, m, 0).getDay();
+	var firstDayOfMonth = new Date(y, m, 1).getDay(); 
+	var lastDayOfMonth = new Date(y, m + 1, 0).getDate();
+	var lastDayOfLastMonth = m === 0 ? new Date(y - 1, 12, 0).getDate() : new Date(y, m, 0).getDate();
 
 	var html = '<table>';
 
 	html += '<thead><tr>';
-	html += '<td colspan="7">' + this.Months[m] + '</td>';
+	html += '<td colspan="7">' + this.Months[m] + ' - ' + y + '</td>';
 	html += '</tr></thead>';
 
 	html += '<tr class="days">';
@@ -116,22 +116,18 @@ Calendar.prototype.showMonth = function(y, m){
 
 			var k = lastDayOfLastMonth - firstDayOfMonth + 1;
 
-			alert(k + " - " + firstDayOfMonth);
-
 			for(var j = 0; j < firstDayOfMonth; j++)
 			{
 				html += '<td class="not-current">' + k + '</td>';
 				k++;
 			}
-
-			alert(html);
 		}
 
 		var chk = new Date();
 		var chkY = chk.getFullYear();
 		var chkM = chk.getMonth();
-		
-		if(chkY === this.currYear && chkM === this.currMonth && i === this.currDay)
+
+		if(chkY === this.currYear && chkM === this.currMonth && i === this.currDate)
 		{
 			html += '<td class="today">' + i + '</td>'
 		}
@@ -173,12 +169,12 @@ window.onload = function(){
 	var c = new Calendar("divCal");
 	c.showcurr();
 
-	document.getElementById("btnCalPrev").onclick = function(){
+	document.getElementById("btncalprev").onclick = function(){
 
 		c.previousMonth();
 	};
 
-	document.getElementById("btnCalNext").onclick = function(){
+	document.getElementById("btncalnext").onclick = function(){
 
 		c.nextMonth();
 	};
