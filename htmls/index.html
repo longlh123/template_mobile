@@ -34,6 +34,7 @@
 		<script type="text/javascript" src='../jquery_custom/jquery.js'></script>
 
 		<script type="text/javascript" src='../javascript/validation_script.js'></script>
+		<script type="text/javascript" src='../javascript/calendar.js'></script>
 
 	<!-- InstanceBeginEditable name="doctitle" -->
 		<title>
@@ -73,6 +74,13 @@
                 	</div>
                 </div>
 
+                <div class='calendar_container'>
+                	<button id='btnCalPrev' type='button'>Prev</button>
+                	<button id='btnCalNext' type='button'>Next</button>
+                	<div id='divCal'></div>
+                </div>
+
+
                 <div class='grp_text' id='phone'>
                 	<input type='text' id='txt_phone_refuse' class='txt_refuse' placeholder="" required>
                 	<span class='highlight'></span>
@@ -107,74 +115,11 @@
                 	<label for='txt_3' class='txt_title'>ĐƯỜNG</label>
                 </div>
 
-                <div class='grp_select'> 
-                	<div class='txt_content'>TINH</div>
-                	<div class='sel'>
-	                	<select id='sel_provinces'>
-	                		<option value="0">Chon Tinh/ Thanh Pho</option>
-	                		<option value="1">Ho Chi Minh</option>
-	                		<option value="2">Ha Noi</option>
-	                		<option value="3">Can Tho</option>
-	                		<option value="4">Da Nang</option>
-	                	</select>
-	                	<div class="sel_arrow"></div>
-                	</div>
-                </div>
+                <div class='grp_select' id='provinces'></div>
+                <div class='grp_select' id='districts'></div>
+                <div class='grp_select' id='wards'></div>
+                
 
-                <div class='grp_select'>
-                	<div class='txt_content'>QUAN/ HUYEN</div>
-                	<div class='sel'>
-	                	<select  id='sel_districts' disabled="disabled">
-	                		<option value="0">Chon Quan/ Huyen</option>
-	                		<option value="1">Ho Chi Minh</option>
-	                		<option value="2">Ha Noi</option>
-	                		<option value="3">Can Tho</option>
-	                		<option value="4">Da Nang</option>
-	                	</select>
-	                	<div class="sel_arrow"></div>
-                	</div>
-                </div>
-
-                <div class='grp_select'>
-                	<div class='txt_content'>PHUONG/ XA</div>
-                	<div class='sel'>
-	                	<select  id='sel_wards' disabled="disabled">
-	                		<option value="0">Chon Phuong/ Xa</option>
-	                		<option value="1">Ho Chi Minh</option>
-	                		<option value="2">Ha Noi</option>
-	                		<option value="3">Can Tho</option>
-	                		<option value="4">Da Nang</option>
-	                	</select>
-	                	<div class="sel_arrow"></div>
-                	</div>
-                </div>
-                <!--
-
-				<div class='txt_group'>
-                	<input type='text' id='txt_refuse_2' class='txt_refuse' placeholder="" required>
-                	<span class='highlight'></span>
-                	<label for='txt_refuse' class='txt_label'>EMAIL</label>
-                	<div class='chk'>
-                		<input type="checkbox" id='chk_refuse_2' class='chk_refuse' name="ref" value="ref">
-                		<label for='chk_refuse_2'>Từ chối trả lời</label>
-                	</div>	
-                </div>
-
-                <h4 align="center">THÔNG TIN ĐỊA CHỈ</h4>
-
-                <div class='txt_group'>
-                	<input type='text' id='txt_2' class='txt' placeholder="" required>
-                	<span class='highlight'></span>
-                	<label for='txt_2' class='txt_label'>SỐ NHÀ</label>
-                </div>
-
-                <div class='txt_group'>
-                	<input type='text' id='txt_3' class='txt' placeholder="" required>
-                	<span class='highlight'></span>
-                	<label for='txt_3' class='txt_label'>ĐƯỜNG</label>
-                </div>
-
-				-->
 			</div>
 			<!-- InstanceEndEditable -->
 			  <div class='footer'>

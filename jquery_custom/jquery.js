@@ -1,5 +1,49 @@
+
+(function($){
+
+	$.fn.templateSelectTag = function($this, url_json, title){
+
+		var id;
+		id = '';
+
+		switch($this.prop('id'))
+		{
+			case 'provinces':
+				id = 'sel_provinces'
+				break;
+			case 'districts':
+				id = 'sel_districts'
+				break;
+			case 'wards':
+				id = 'sel_wards'
+				break;
+		}
+
+		$this.empty();
+		$this.append('<div class="txt_content">' + title.toUpperCase() + '</div>');
+		$this.append('<div class="sel">' +
+						'<select ' + (id.length === 0 ? '' : 'id =' + id) + ' class="sel_select">' +
+						'	<option value="0">Chọn ' + title + '</option>' + 
+						'</select>' +
+						'<div class="sel_arrow"></div>' +
+					'</div>');
+
+		
+		$.getJSON(url_json, function(data){
+
+			$.each(data, function(key, entry){
+
+				$('#' + id).append('<option value="' + key + '">' + data[key]["name_with_type"] + '</option>');
+			});
+		});
+	};
+
+})(jQuery);
+
 $(document).ready(function(){
 	
+	$.fn.templateSelectTag($('#provinces'), '../json/tinh_tp.json', 'Tỉnh/ Thành Phố');
+
 	$('input[type=checkbox]').change(function(){
 
 		var n = $(this).attr('name');
@@ -90,7 +134,7 @@ $(document).ready(function(){
 		}
 	});
 
-	$('select').change(function(){
+	$('body').on('change', '.sel_select', function(){
 
 		var $grp_select = $(this).parent().parent();
 
@@ -107,52 +151,44 @@ $(document).ready(function(){
 			case 'sel_provinces':
 				if($(this).val() === '0')
 				{
-					$grp_select.append("<span class='error'>Vui long chon Tinh/ Thanh Pho.</span>");
+					$grp_select.append("<span class='error'>Vui lòng chọn Tỉnh/ Thành Phố.</span>");	
 
-					$('#sel_districts').val('0');
-					$('#sel_districts').attr('disabled', 'disabled');
-
-					$('#sel_wards').val('0');
-					$('#sel_wards').attr('disabled', 'disabled');
+					$('#districts').empty();
+					$('#wards').empty();
 				}
 				else
 				{
-					$('#sel_districts').removeAttr('disabled');
+					$.fn.templateSelectTag($('#districts'), '../json/quan-huyen/' + $(this).val() + '.json', 'Quận/ Huyện');
 				}
 				break;
 			case 'sel_districts':
 				if($(this).val() === '0')
 				{
-					$grp_select.append("<span class='error'>Vui long chon Quan/ Huyen.</span>");
-					$('#sel_wards').val('0');
-					$('#sel_wards').attr('disabled', 'disabled');
+					$grp_select.append("<span class='error'>Vui lòng chọn Quận/ Huyện.</span>");
+					
+					$('#wards').empty();
 				}
 				else
 				{
-					$('#sel_wards').removeAttr('disabled');
+					$.fn.templateSelectTag($('#wards'), '../json/xa-phuong/' + $(this).val() + '.json', 'Phường/ Xã');
 				}
 				break;
 			case 'sel_wards':
 				if($(this).val() === '0')
 				{
-					$grp_select.append("<span class='error'>Vui long chon Phuong/ Xa.</span>");
+					$grp_select.append("<span class='error'>Vui lòng chọn Phường/ Xã.</span>");
 				}
 				break;
 			default:
 				if($(this).val() === '0')
 				{
-					$grp_select.append("<span class='error'>Vui long chon cau tra loi.</span>");
+					$grp_select.append("<span class='error'>Vui lòng chọn câu trả lời.</span>");
 				}
 				break;
 		}
-
-		
-
-
-
-
 	});
 
+		
 
 
 
