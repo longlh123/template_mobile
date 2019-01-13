@@ -317,18 +317,24 @@ textarea{
 
 /*---------------------------------*/
 
-/*----------CALENDAR---------------*/
-.calendar_container{
-	width: 360px;
-	margin: 3em auto;
-	padding: 2em;
+/*----------DATETIMEPICKER---------*/
+.datetimepicker{
+	position: relative;
+	margin-top: 35px;
+	margin-bottom: 45px;
+}
+
+.dtp_container{
+	display: none;
+	width: 280px;
+	margin: 0.5em;
+	padding: 0.5em;
 	border: 1px solid rgb(220,220,255);
 	border-radius: 5px;
 	background: #fff;
 }
 
-.calendar_container table{
-	clear: both;
+.dtp_container table{
 	width: 100%;
 	border: 1px solid rgb(220, 220, 255);
 	border-radius: 3px;
@@ -336,56 +342,70 @@ textarea{
 	color: #444;
 }
 
-.calendar_container td{
-	height: 48px;
+.dtp_container td{
+	height: 24px;
 	text-align: center;
 	vertical-align: middle;
 	border-right: 1px solid rgb(220, 220, 255);
 	border-top: 1px solid rgb(220, 220, 255);
 	width: 100% / 7;
+	font-size: 11px;
 }
 
-.calendar_container td.not-current{
+.dtp_container td.not-current{
 	color: #c0c0c0;
 }
 
-.calendar_container td.normal{
+.dtp_container td.normal{
 	font-weight: 400;
+	cursor: pointer;
 }
 
-.calendar_container td.today{
+.dtp_container td:hover.normal, td:hover.today{
+	background-color: #c0c0c0;
+}
+
+.dtp_container td.today{
 	font-weight: 700;
 	color: #047AA8;
+	cursor: pointer;
 }
 
-.calendar_container thead td{
+.dtp_container thead td{
 	border: none;
 	text-transform: uppercase;
 	font-weight: 700;
 }
 
-.calendar_container tr.days{
+.dtp_container tr.days{
 	font-weight: 700;
 }
 
-.calendar_container #btncalprev{
+.dtp_container .btncalprev{
 	float: left;
 	margin-bottom: 10px;
 }
 
-.calendar_container #btncalprev:before{
+.dtp_container .btncalprev:before{
 	content: '<<';
 	padding-right: 4px;
 }
 
-.calendar_container #btncalnext{
+.dtp_container .btncalnext{
 	float: right;
 	margin-bottom: 10px;
 }
 
-.calendar_container #btncalnext:after{
+.dtp_container .btncalnext:after{
 	content: '>>';
 	padding-left: 4px;
+}
+
+.dtp_container input[type="text"]{
+	display: inline-block;
+	width: 100px;
+	height: 20px;
+	text-align: center;
 }
 
 /*----------DATE TIME PICKER-------*/
